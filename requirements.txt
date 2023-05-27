@@ -1,4 +1,6 @@
 Flask 
 gunicorn
+os
 Openai 
 dotenv
+random
