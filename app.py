@@ -1,11 +1,16 @@
 from flask import Flask, request, render_template
+from dotenv import load_dotenv
+import os
 import openai
 import random
+
+# Load environment variables from .env file
+load_dotenv()
 
 app = Flask(__name__)
 
 # OpenAI API credentials
-openai.api_key = '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'
+openai.api_key = os.getenv("OPENAI_API_KEY")
 
 # GPT-3.5 parameters
 model = "text-davinci-003"
@@ -72,3 +77,12 @@ def is_greeting(message):
 
 if __name__ == '__main__':
     app.run(debug=True)
+
+    
+    
+    # Serve static files
+@app.route('/static/<path:filename>')
+def serve_static(filename):
+    root_dir = os.path.dirname(os.path.abspath(__file__))
+    return send_from_directory(os.path.join(root_dir, 'static'), filename)
+
