@@ -4,5 +4,4 @@ A tsundere gf powered by GPT-3 for ya'll schizophrenic weebs right there !!!!
 
 
 ## Note 
-Project is still ongoing and text-to-speech and a face movement will be further implemented.
-If you want to contribute anything in the project then feel free to do so. 
+If you want to run it locally just clone the repo and then change the openai-APIKEY and use as you want it to be.
